@@ -22,7 +22,7 @@ function homePage(e) {
     headerHome.classList.add('nav__link--selected')
     headerMyLibrary.classList.remove('nav__link--selected')
     headerQueuedBtn.classList.remove('btn--selected')
-    headerError.classList.add('hidden')
+    headerError.classList.add('hidden', 'none')
 }
 
 function myLibrary(e) {
@@ -36,7 +36,7 @@ function myLibrary(e) {
     headerMyLibrary.classList.add('nav__link--selected')
     headerWatchedBtn.classList.add('btn--selected')
     headerQueuedBtn.classList.remove('btn--selected')
-    headerError.classList.add('hidden')
+    headerError.classList.add('hidden', 'none')
 }
 
 function watchedBtn(e) {
@@ -54,8 +54,8 @@ function queuedBtn(e) {
 function error(e) {
     e.preventDefault();
     if (headerError.classList.contains('hidden')) {
-        headerError.classList.remove('hidden')
+        headerError.classList.remove('hidden', 'none')
     } else {
-        headerError.classList.add('hidden')
+        headerError.classList.add('hidden', 'none')
     }
 }

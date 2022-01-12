@@ -69,9 +69,7 @@ function error(e) {
 }
 
 function defaultBtn(e) {
-
     if (e.target.classList.contains('header-queue-btn-js')) {
-
         headerWatchedBtn.classList.add('btn--default');
     }
     if (e.taget.classList.conrains('header-watched-btn-js')) {

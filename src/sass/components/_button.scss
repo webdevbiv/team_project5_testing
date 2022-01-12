@@ -31,4 +31,11 @@
         box-shadow: $btn-shadow;
         transition: all $speed $cubic-bezier;
     }
+
+    &--default {
+        outline: solid 1px $fc-secondary;
+        background: transparent;
+        transition: all $speed $cubic-bezier;
+        box-shadow: none;
+    }
 }

@@ -4,12 +4,20 @@ const { headerLogo, headerLogoIcon, headerHome, headerMyLibrary, headerWatchedBt
     headerQueuedBtn, headerFormInput, headerFormSubmitBtn, headerError,
     headerSection, headerForm, headerLnWrapper, headerNavMyLibrary } = refs;
 
+// ----- logo -----
 headerLogo.addEventListener('click', homePage)
 headerHome.addEventListener('click', homePage)
+// ----- navigation menu -----
 headerMyLibrary.addEventListener('click', myLibrary)
-headerWatchedBtn.addEventListener('click', watchedBtn)
-headerQueuedBtn.addEventListener('click', queuedBtn)
+// ----- shearch input -----
 headerFormSubmitBtn.addEventListener('click', error)
+// ----- navigation user -----
+headerWatchedBtn.addEventListener('click', watchedBtn)
+headerWatchedBtn.addEventListener('mouseover', defaultBtn)
+headerQueuedBtn.addEventListener('click', queuedBtn)
+headerQueuedBtn.addEventListener('mouseover', defaultBtn)
+headerQueuedBtn.addEventListener('mouseout', removeDefaultBtn)
+
 
 
 function homePage(e) {
@@ -58,4 +66,20 @@ function error(e) {
     } else {
         headerError.classList.add('hidden', 'none')
     }
+}
+
+function defaultBtn(e) {
+
+    if (e.target.classList.contains('header-queue-btn-js')) {
+
+        headerWatchedBtn.classList.add('btn--default');
+    }
+    if (e.taget.classList.conrains('header-watched-btn-js')) {
+        headerQueuedBtn.classList.add('btn--default');
+    }
+}
+
+function removeDefaultBtn() {
+    headerWatchedBtn.classList.remove('btn--default');
+    headerQueuedBtn.classList.remove('btn--default');
 }

@@ -1,3 +1,4 @@
+//! ----- Для разных экранов -----
 @mixin for-phone {
     @media (max-width: $phone-bp) {
         @content;
@@ -16,6 +17,12 @@
     }
 }
 
+// использование:
+// @include for-tablet {
+//  display: none;
+// }
+
+//! ----- Для текста -----
 @mixin font-style($font-weight: 500,
     $font-size: 12px,
     $line-height: 1.67,
@@ -29,24 +36,28 @@
     color: $color;
 }
 
-// ------------ значения по умолчанию в mixins.scss  ------------
+// значения по умолчанию в mixins.scss
 // font-style($font-weight: 500,
 //     $font-size: 12px,
 //     $line-height: 1.67,
 //     $color: $fc-main)
-// использование
+
+// использование:
 // .text {
 // @include font-style(500, 12px, 1.67, $fc-main); значение, которые не указали идут по умолчанию
 // }
 // если хотите поменять только одно значение, третьего параметра line-height, то нужно использовать так font-styles($line-height: 16px)
 // если нужно первый параметр, то просто font-styles(500), все остальные пойдут по умолчанию
 
-//! Для анимации ховера
+//! ----- Для анимации ховера -----
 @mixin trans($element) {
     transition: #{$element} $speed $cubic-bezier;
 }
 
-//! Сетка для карточек
+// использование:
+// @include trans(стиль например: color);
+
+//! ----- Сетка для карточек -----
 @mixin grid-list($margin) {
     display: flex;
     flex-wrap: wrap;

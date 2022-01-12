@@ -5,7 +5,7 @@ export default {
     headerHome: document.querySelector('.header-home-js'),
     headerMyLibrary: document.querySelector('.header-my-library-js'),
     headerWatchedBtn: document.querySelector('.header-watched-btn-js'),
-    headerQueuedBtn: document.querySelector('.header-queue-btn-js'),
+    headerQueueBtn: document.querySelector('.header-queue-btn-js'),
     headerFormInput: document.querySelector('.header-form-input-js'),
     headerFormSubmitBtn: document.querySelector('.header-form-submit-btn-js'),
     headerError: document.querySelector('.header-error-js'),

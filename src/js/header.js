@@ -1,7 +1,7 @@
 import refs from './refs.js';
 
 const { headerLogo, headerLogoIcon, headerHome, headerMyLibrary, headerWatchedBtn,
-    headerQueuedBtn, headerFormInput, headerFormSubmitBtn, headerError,
+    headerQueueBtn, headerFormInput, headerFormSubmitBtn, headerError,
     headerSection, headerForm, headerLnWrapper, headerNavMyLibrary } = refs;
 
 // ----- logo -----
@@ -15,9 +15,9 @@ headerFormSubmitBtn.addEventListener('click', error)
 headerWatchedBtn.addEventListener('click', watchedBtn)
 headerWatchedBtn.addEventListener('mouseover', defaultBtn)
 headerWatchedBtn.addEventListener('mouseout', removeDefaultBtn)
-headerQueuedBtn.addEventListener('click', queuedBtn)
-headerQueuedBtn.addEventListener('mouseover', defaultBtn)
-headerQueuedBtn.addEventListener('mouseout', removeDefaultBtn)
+headerQueueBtn.addEventListener('click', QueueBtn)
+headerQueueBtn.addEventListener('mouseover', defaultBtn)
+headerQueueBtn.addEventListener('mouseout', removeDefaultBtn)
 
 
 
@@ -30,7 +30,7 @@ function homePage(e) {
     headerFormInput.classList.remove('hidden')
     headerHome.classList.add('nav__link--selected')
     headerMyLibrary.classList.remove('nav__link--selected')
-    headerQueuedBtn.classList.remove('btn--selected')
+    headerQueueBtn.classList.remove('btn--selected')
     headerError.classList.add('hidden', 'none')
 }
 
@@ -44,20 +44,20 @@ function myLibrary(e) {
     headerHome.classList.remove('nav__link--selected')
     headerMyLibrary.classList.add('nav__link--selected')
     headerWatchedBtn.classList.add('btn--selected')
-    headerQueuedBtn.classList.remove('btn--selected')
+    headerQueueBtn.classList.remove('btn--selected')
     headerError.classList.add('hidden', 'none')
 }
 
 function watchedBtn(e) {
     e.preventDefault();
     headerWatchedBtn.classList.add('btn--selected')
-    headerQueuedBtn.classList.remove('btn--selected')
+    headerQueueBtn.classList.remove('btn--selected')
 }
 
-function queuedBtn(e) {
+function QueueBtn(e) {
     e.preventDefault();
     headerWatchedBtn.classList.remove('btn--selected')
-    headerQueuedBtn.classList.add('btn--selected')
+    headerQueueBtn.classList.add('btn--selected')
 }
 
 function error(e) {
@@ -74,11 +74,11 @@ function defaultBtn(e) {
         headerWatchedBtn.classList.add('btn--default');
     }
     if (e.target.classList.contains('header-watched-btn-js')) {
-        headerQueuedBtn.classList.add('btn--default');
+        headerQueueBtn.classList.add('btn--default');
     }
 }
 
 function removeDefaultBtn() {
     headerWatchedBtn.classList.remove('btn--default');
-    headerQueuedBtn.classList.remove('btn--default');
+    headerQueueBtn.classList.remove('btn--default');
 }

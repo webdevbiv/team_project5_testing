@@ -14,6 +14,7 @@ headerFormSubmitBtn.addEventListener('click', error)
 // ----- navigation user -----
 headerWatchedBtn.addEventListener('click', watchedBtn)
 headerWatchedBtn.addEventListener('mouseover', defaultBtn)
+headerWatchedBtn.addEventListener('mouseout', removeDefaultBtn)
 headerQueuedBtn.addEventListener('click', queuedBtn)
 headerQueuedBtn.addEventListener('mouseover', defaultBtn)
 headerQueuedBtn.addEventListener('mouseout', removeDefaultBtn)
@@ -72,7 +73,7 @@ function defaultBtn(e) {
     if (e.target.classList.contains('header-queue-btn-js')) {
         headerWatchedBtn.classList.add('btn--default');
     }
-    if (e.taget.classList.conrains('header-watched-btn-js')) {
+    if (e.target.classList.contains('header-watched-btn-js')) {
         headerQueuedBtn.classList.add('btn--default');
     }
 }
